@@ -1,16 +1,80 @@
+/* STYLESHEET FOR JBAY
+   Author: Joshua Newman 2014
+*/
+
+/* Colors, mixins etc. */
+$amazon:       #38704F;
+$smokeGrey:    #818181;
+$bombay:       #ADADAD;
+$lightestGrey: #D6D6D6;
+
+/*limited reset*/
+html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, canvas, video, th, td, tr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align:baseline;
+  font: inherit;
+}
+
+/*html5 display rule*/
+address, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, nav, menu, nav, section, summary {
+  display: block;
+  float: none;
+}
+
+a {
+  text-decoration: none;
+  color: $bombay;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a img {
+  border: none;
+  outline: none;
+}
+
+html {
+  width: 100%;
+}
+
 body {
+  font: 100% 'Lora', Georgia, Times, serif;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  background: white;
+  line-height: 1.5em;
+  z-index: -100;
+  background: $bombay;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'AmaticSCRegular', Georgia, 'Times New Roman', serif;
+  color: #1A1A1A;
+  text-align: center;
+}
+
+/* NAV STYLES */
+
+nav#main-nav {
   width: 960px;
   margin: 0 auto;
 }
 
-.debug_dump {
-  margin: 50px auto;
-}
-
-footer {
-  text-align: center;
-  margin-top: 40px;
-  background-color: #eee;
+header {
+  background-color: $amazon
 }
 
 header img {
@@ -19,7 +83,23 @@ header img {
   position: relative;
 }
 
-nav ul li {
+/* BODY STYLES */
+
+div.container {
+  width: 960px;
+  margin: 0 auto;
+  background: white;
 }
 
+/* FOOTER STYLES */
 
+footer {
+  text-align: center;
+  background-color: $amazon;
+  color: $lightestGrey;
+}
+
+.debug_dump {
+  margin: 0 auto;
+  width: 960px;
+}
