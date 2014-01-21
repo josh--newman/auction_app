@@ -1,6 +1,6 @@
 @import "bootstrap";
 
-header, footer, .debug_dump {
+body {
   width: 960px;
   margin: 0 auto;
 }
@@ -12,6 +12,7 @@ header, footer, .debug_dump {
 footer {
   text-align: center;
   margin-top: 40px;
+  background-color: #eee;
 }
 
 header img {
@@ -22,3 +23,5 @@ header img {
 
 nav ul li {
 }
+
+
