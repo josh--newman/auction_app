@@ -1,4 +1,6 @@
 AuctionApp::Application.routes.draw do
+  resources :categories
+
   root "static_pages#about"
 
   get '/contact', to: 'static_pages#contact', as: 'contact'
