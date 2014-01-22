@@ -1,3 +1,4 @@
 class Item < ActiveRecord::Base
-    belongs_to :category
+  default_scope -> { order('created_at DESC') }
+  belongs_to :category
 end

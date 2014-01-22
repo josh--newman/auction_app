@@ -1,0 +1,27 @@
+<p>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @item.description %>
+</p>
+
+<p>
+  <strong>Vendor:</strong>
+  <%= @item.vendor %>
+</p>
+
+<p>
+  <strong>Starting Price:</strong>
+  <%= @item.starting_price %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @item.category.name %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', root_path %>
