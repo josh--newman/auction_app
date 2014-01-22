@@ -12,6 +12,7 @@ $defaultFont: 'Exo 2';
 
 /* fonts */
 
+@import url(http://fonts.googleapis.com/css?family=Exo+2:200,300,300italic,400,400italic,600);
 
 
 /*limited reset*/
@@ -139,7 +140,11 @@ footer {
 }
 
 .debug_dump {
-  margin: 0 auto;
+  margin: 30px auto;
   width: 960px;
   font-size: 1em;
+  padding: 10px;
+  font-family: monospace;
+  background-color: #eee;
+  font-size: 1.2em;
 }
