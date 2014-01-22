@@ -1,18 +1,106 @@
-@import "bootstrap";
+/* STYLESHEET FOR JBAY
+   Author: Joshua Newman 2014
+*/
+
+/* Colors, mixins etc. */
+$amazon:       #38704F;
+$smokeGrey:    #818181;
+$bombay:       #ADADAD;
+$lightestGrey: #D6D6D6;
+
+$defaultFont: 'Exo 2';
+
+/* fonts */
+
+@import url(http://fonts.googleapis.com/css?family=Exo+2:200,300,300italic,400,400italic,600);
+
+/*limited reset*/
+html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h3, h4, h5, h6, p, blockquote, address, time, span, em, strong, img, ol, ul, li, figure, canvas, video, th, td, tr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align:baseline;
+  font: inherit;
+}
+
+/*html5 display rule*/
+address, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, nav, menu, nav, section, summary {
+  display: block;
+  float: none;
+}
+
+a {
+  text-decoration: none;
+  color: $lightestGrey;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a img {
+  border: none;
+  outline: none;
+}
+
+html {
+  width: 100%;
+}
 
 body {
-  width: 960px;
+  font: 100% $defaultFont, sans-serif;
+  font-weight: 200;
+  width: 100%;
+  position: relative;
   margin: 0 auto;
+  background: $amazon;
+  line-height: 1.5em;
+  z-index: -100;
 }
 
-.debug_dump {
-  margin: 50px auto;
+img {
+  max-width: 100%;
 }
 
-footer {
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #1A1A1A;
   text-align: center;
-  margin-top: 40px;
-  background-color: #eee;
+}
+
+/* NAV STYLES */
+
+nav#main-nav {
+  width: 960px;
+  height: 150px;
+  margin: 0 auto;
+  h1 {
+    float: left;
+    line-height: 150px;
+    font-size: 4em;
+    color: $lightestGrey;
+    font: $defaultFont;
+  }
+  ul {
+    line-height: 100px;
+    float: right;
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+header {
+  background-color: $amazon;
+  font-size: 1.5em;
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 header img {
@@ -21,7 +109,37 @@ header img {
   position: relative;
 }
 
-nav ul li {
+/* BODY STYLES */
+
+div.main-body {
+  width: 100%;
+  background: $lightestGrey;
+}
+
+div.container {
+  width: 960px;
+  margin: 0 auto;
+  background: white;
+  font-size: 1.2em;
+  padding: 20px;
+
+  h1 {
+    font-size: 3em;
+    line-height: 3em;
+  }
 }
 
 
+/* FOOTER STYLES */
+
+footer {
+  text-align: center;
+  background-color: $amazon;
+  color: $lightestGrey;
+}
+
+.debug_dump {
+  margin: 0 auto;
+  width: 960px;
+  font-size: 1em;
+}
