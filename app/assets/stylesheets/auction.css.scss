@@ -123,6 +123,9 @@ header {
       text-decoration: none;
     }
   }
+  li {
+    padding: 0 10px;
+  }
 }
 
 header img {
@@ -157,8 +160,10 @@ div.container {
 table {
   padding: 5px;
   th {
+    margin: 0;
     padding: 10px;
     font-weight: 600;
+    border-bottom: 1px solid $charcoalGrey;
   }
   td {
     padding: 5px;
