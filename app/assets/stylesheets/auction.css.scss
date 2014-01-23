@@ -44,6 +44,10 @@ a img {
   outline: none;
 }
 
+html, body {
+  height: 100%;
+}
+
 html {
   width: 100%;
 }
@@ -147,4 +151,21 @@ footer {
   font-family: monospace;
   background-color: #eee;
   font-size: 1.2em;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+
+.push {
+  height: 100px;
+}
+
+/* MISC */
+
+.field_with_errors {
+  display: inline;
 }
