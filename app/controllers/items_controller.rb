@@ -3,7 +3,11 @@ class ItemsController < ApplicationController
   before_action :set_categories, only: [:edit, :new, :create]
 
   def index
-    @items = Item.all
+    if params[:search]
+      @items = Item.search(params[:search]).order("created_at DESC")
+    else
+      @items = Item.all
+    end
   end
 
   def edit
