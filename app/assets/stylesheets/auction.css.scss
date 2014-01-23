@@ -8,6 +8,14 @@ $smokeGrey:    #818181;
 $bombay:       #ADADAD;
 $lightestGrey: #D6D6D6;
 
+/* JBay logo colours */
+$cgRed:        #E13833;
+$navyBlue:     #0061D8;
+$uclaGold:     #F3B000;
+$appleGreen:   #88B700;
+
+
+
 $defaultFont: 'Exo 2';
 
 /* fonts */
@@ -76,6 +84,11 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 
+.c1 { color: $cgRed; }
+.c2 { color: $navyBlue; }
+.c3 { color: $uclaGold; }
+.c4 { color: $appleGreen; }
+
 /* NAV STYLES */
 
 nav#main-nav {
@@ -101,6 +114,9 @@ nav#main-nav {
 header {
   background-color: $amazon;
   font-size: 1.5em;
+  h1 {
+    letter-spacing: -0.17em;
+  }
   a {
     &:hover {
       text-decoration: none;
@@ -119,6 +135,9 @@ header img {
 div.main-body {
   width: 100%;
   background: $lightestGrey;
+  a {
+    color: $amazon;
+  }
 }
 
 div.container {
@@ -131,6 +150,17 @@ div.container {
   h1 {
     font-size: 3em;
     line-height: 3em;
+  }
+}
+
+table {
+  padding: 5px;
+  th {
+    padding: 10px;
+    font-weight: 600;
+  }
+  td {
+    padding: 5px;
   }
 }
 
