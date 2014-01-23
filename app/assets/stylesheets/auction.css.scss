@@ -154,6 +154,7 @@ div.container {
   h1 {
     font-size: 3em;
     line-height: 3em;
+    display: block;
   }
 }
 
@@ -170,6 +171,22 @@ table {
   }
 }
 
+/* ABOUT STYLES */
+.about-article {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 400px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  h2 {
+    margin: 20px 0;
+    font-size: 2em;
+  }
+  &:last-child {
+    margin-left: 50px;
+  }
+}
 
 /* FOOTER STYLES */
 

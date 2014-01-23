@@ -1,8 +1,17 @@
-<h1>About <%= print_jbay %></h1>
-<p>JBay is a auction site that facilitates the sales of goods and services.</p>
-<p>We sell thing like:</p>
-<ul>
-  <li>Electronics</li>
-  <li>Books</li>
-  <li>Clothes</li>
-</ul>
+<h1>What is <%= print_jbay %>?</h1>
+<article class="about-article">
+  <%= image_tag("about_icons/buy_icon.png", alt: "Buy stuff") %>
+  <h2>Buy</h2>
+  <p>
+    Anything you can think of you can buy on JBay 
+    (as long as someone else has listed it). Just go to the home page and start browsing. You can browse by category, title, or vendor.
+  </p>
+</article>
+
+<article class="about-article">
+  <%= image_tag("about_icons/sell_icon.png", alt: "Buy stuff") %>
+  <h2>Sell</h2>
+  <p>
+    Have some items that are taking up too much space in your life? Try listing them on JBay and see if anybody will buy it. Nothing is off limits. Sell your animals, kidneys or anything else you can think of.
+  </p>
+</article>
