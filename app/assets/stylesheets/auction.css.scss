@@ -3,7 +3,7 @@
 */
 
 /* Colors, mixins etc. */
-$amazon:       #444444;
+$charcoalGrey: #444444;
 $smokeGrey:    #818181;
 $bombay:       #ADADAD;
 $lightestGrey: #D6D6D6;
@@ -66,7 +66,7 @@ body {
   width: 100%;
   position: relative;
   margin: 0 auto;
-  background: $amazon;
+  background: $charcoalGrey;
   line-height: 1.5em;
   z-index: -100;
 }
@@ -116,7 +116,7 @@ nav#main-nav {
 }
 
 header {
-  background-color: $amazon;
+  background-color: $charcoalGrey;
   font-size: 1.5em;
   a {
     &:hover {
@@ -137,7 +137,7 @@ div.main-body {
   width: 100%;
   background: $lightestGrey;
   a {
-    color: $amazon;
+    color: $navyBlue;
   }
 }
 
@@ -170,7 +170,7 @@ table {
 
 footer {
   text-align: center;
-  background-color: $amazon;
+  background-color: $charcoalGrey;
   color: $lightestGrey;
 }
 
