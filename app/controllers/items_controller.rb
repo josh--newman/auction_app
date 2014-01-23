@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item,       only: [:show, :edit, :update, :destroy]
-  before_action :set_categories, only: [:edit, :new]
+  before_action :set_categories, only: [:edit, :new, :create]
 
   def index
     @items = Item.all
@@ -16,10 +16,10 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save #success
+    if @item.save   #success
       redirect_to root_url
     else            # failure
-      render 'item/new'
+      render action: 'new'
     end
   end
 
