@@ -5,8 +5,14 @@ class Item < ActiveRecord::Base
 
   validates :name, presence: true, length: { maximum: 50 }
 
-  def self.search(query)
-    where("name || description LIKE ?", "%#{query}%")
+  def self.search(name, category_id)
+    if !category_id.empty?
+      where("name || description LIKE ? AND category_id = ?", 
+            "%#{name}%", "#{category_id}")
+    else
+      where("name || description LIKE ?",
+            "%#{name}%")
+    end
   end
 
 end

@@ -3,8 +3,8 @@ class ItemsController < ApplicationController
   before_action :set_categories, only: [:edit, :new, :create, :index]
 
   def index
-    if params[:search]
-      @items = Item.search(params[:search]).order("created_at DESC")
+    if (params[:search] && params[:category])
+      @items = Item.search(params[:search], params[:category]).order("created_at DESC")
     else
       @items = Item.all
     end
