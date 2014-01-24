@@ -1,6 +1,9 @@
 <h1>Welcome to <%= print_jbay %></h1>
 <h2>Items for sale</h2>
 <%= render 'shared/search' %>
+
+<%= will_paginate %>
+
 <table>
   <thead>
     <tr>
@@ -18,6 +21,8 @@
     <% end %>
   </tbody>
 </table>
+
+<%= will_paginate %>
 
 <br>
 
