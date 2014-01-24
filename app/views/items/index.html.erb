@@ -5,8 +5,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Description</th>
-      <th>Starting Price</th>
+      <th>Category</th>
     </tr>
   </thead>
 
@@ -14,9 +13,7 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= link_to item.name, item %></td>
-        <td><%= item.description %></td>
-        <td><%= number_to_currency(item.starting_price) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= item.category.name %></td>
       </tr>
     <% end %>
   </tbody>
