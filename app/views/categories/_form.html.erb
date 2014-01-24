@@ -2,7 +2,7 @@
   <%= render 'shared/error_messages', object: f.object %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, class: "required" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
