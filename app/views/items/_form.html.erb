@@ -18,7 +18,8 @@
     </div>
     <div class="field">
         Category<br>
-        <%= f.select(:category_id, options_for_select(@categories, selected: @item.category_id)) %>
+        <%= f.select(:category_id, options_for_select(@categories, selected: @item.category_id),
+                     prompt: "Select a category") %>
     </div>
     <%= f.submit "List item" %>
 <% end %>

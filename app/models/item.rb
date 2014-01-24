@@ -4,6 +4,8 @@ class Item < ActiveRecord::Base
   belongs_to :category
 
   validates :name, presence: true, length: { maximum: 50 }
+  validates :category_id, presence: true
+  validates :vendor, presence: true
 
   def self.search(name, category_id)
     if !category_id.empty?
