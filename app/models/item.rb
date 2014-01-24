@@ -6,7 +6,7 @@ class Item < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 50 }
 
   def self.search(query)
-    where("name LIKE ?", "%#{query}%")
+    where("name || description LIKE ?", "%#{query}%")
   end
 
 end
