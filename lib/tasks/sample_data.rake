@@ -19,7 +19,7 @@ namespace :db do
       name = Faker::Commerce.product_name
       vendor = Faker::Name.name
       category_id = rand(1..10)
-      description = Faker::Company.catch_phrase
+      description = Faker::Lorem.paragraph
       starting_price = rand(10..999) - 0.05
       Item.create!(name:           name,
                    vendor:         vendor,
