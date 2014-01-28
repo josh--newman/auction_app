@@ -188,6 +188,39 @@ table {
   }
 }
 
+/* ITEMS INDEX STYLES */
+
+article.item-preview {
+  clear: both;
+  width: 850px;
+  height: 220px;
+  margin: 20px auto;
+  div.item-thumb {
+    height: 180px;
+    width: 180px;
+    margin: 20px 80px 0;
+    background-color: $smokeGrey;
+    -webkit-border-radius: 180px;
+    border-radius: 180px;
+    float: left;
+  }
+  .details {
+    margin: 20px;
+    float: left;
+    display: block;
+    h2, h3 {
+      text-align: left;
+      margin-top: 40px;
+    }
+    h2 {
+      font-size: 1.6em;
+    }
+    h3 {
+      font-style: italic;
+    }
+  }
+}
+
 /* FOOTER STYLES */
 
 footer {

@@ -4,23 +4,16 @@
 
 <%= will_paginate %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Category</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @items.each do |item| %>
-      <tr>
-        <td><%= link_to item.name, item %></td>
-        <td><%= item.category.name %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @items.each do |item| %>
+<article class="item-preview">
+  <div class="item-thumb"></div>
+  <div class="details">
+    <h2><%= link_to item.name, item %></h2>
+    <h3><%= item.category.name %></h3>
+  </div>
+</article>
+<hr>
+<% end %>
 
 <%= will_paginate %>
 
