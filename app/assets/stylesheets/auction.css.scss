@@ -14,7 +14,16 @@ $navyBlue:     #0061D8;
 $uclaGold:     #F3B000;
 $appleGreen:   #88B700;
 
-
+@mixin submit-button($color) {
+    width: 100px;
+    height: 30px;
+    background-color: $color;
+    border: none;
+    color: white;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
 
 $defaultFont: 'Exo 2';
 
@@ -41,10 +50,9 @@ address, article, aside, canvas, details, figcaption, figure, footer, header, hg
 a {
   text-decoration: none;
   color: $lightestGrey;
-}
-
-a:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 a img {
@@ -171,19 +179,17 @@ table {
   }
 }
 
+p.sell {
+  text-align: center;
+  margin: 50px 0;
+}
+
 /* SEARCH BAR STYLES */
 
 .input-append {
-  text-align: right;
+  text-align: center;
   input[type="submit"] {
-    width: 100px;
-    height: 30px;
-    background-color: $appleGreen;
-    border: none;
-    color: white;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    margin: 10px 0;
+    @include submit-button($appleGreen);
   }
 }
 
