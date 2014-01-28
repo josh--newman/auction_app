@@ -171,6 +171,37 @@ table {
   }
 }
 
+/* SEARCH BAR STYLES */
+
+.input-append {
+  text-align: right;
+  input[type="submit"] {
+    width: 100px;
+    height: 30px;
+    background-color: $appleGreen;
+    border: none;
+    color: white;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin: 10px 0;
+  }
+}
+
+input#search {
+  width: 400px;
+  height: 30px;
+  font-size: 1em;
+}
+
+select#category {
+  height: 30px;
+  width: 200px;
+  padding-left: 10px;
+  background-color: $navyBlue;
+  color: white;
+  border: none;
+}
+
 /* ABOUT STYLES */
 .about-article {
   vertical-align: top;
