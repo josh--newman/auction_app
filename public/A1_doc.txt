@@ -7,7 +7,7 @@ Date: 28th January 2014
 
 # Getting set up
     
-    $ git clone git@bitbucket.org:josh.newman/auction_app.git
+    $ git clone git@bitbucket.org:josh_newman/auction_app.git
     $ cd auction_app
     $ bundle install
     $ rake db:migrate
