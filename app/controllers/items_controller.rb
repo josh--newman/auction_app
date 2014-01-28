@@ -4,10 +4,13 @@ class ItemsController < ApplicationController
 
   def index
     if (params[:search] && params[:category])
+      # this will search the DB for the specified params
+      # and return them ordered by last created first
       @items = Item.search(params[:search], params[:category]).order("created_at DESC")
     else
       @items = Item.all
     end
+    # then paginate the items
     @items = @items.paginate(page: params[:page], per_page: 10)
   end
 
@@ -47,6 +50,8 @@ class ItemsController < ApplicationController
       @item = Item.find(params[:id])
     end
 
+    # this method collects the category names and id's
+    # for the dropdown menu in the form
     def set_categories
       @categories = Category.all.collect { |c| [c.name, c.id] }
     end

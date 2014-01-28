@@ -9,9 +9,11 @@ class Item < ActiveRecord::Base
 
   def self.search(name, category_id)
     if !category_id.empty?
+      # search with category_id
       where("name || description LIKE ? AND category_id = ?", 
             "%#{name}%", "#{category_id}")
     else
+      # there is no category_id
       where("name || description LIKE ?",
             "%#{name}%")
     end
