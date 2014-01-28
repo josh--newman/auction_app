@@ -188,7 +188,7 @@ table {
   }
 }
 
-/* ITEMS INDEX STYLES */
+/* ITEMS PREVIEW AND DETAILS STYLES */
 
 article.item-preview {
   border-bottom: 1px solid black;
@@ -218,6 +218,58 @@ article.item-preview {
     }
     h3 {
       font-style: italic;
+    }
+  }
+}
+
+article.item-details {
+  width: 600px; 
+  margin: 0 auto;
+  padding: 30px;
+  div.image {
+    width: 256px;
+    height: 256px;
+    background-color: $smokeGrey;
+    margin: 30px auto;
+    -webkit-border-radius: 256px;
+    border-radius: 256px;
+  }
+  span {
+    color: $appleGreen;
+    letter-spacing: 0em;
+  }
+  h1 {
+    margin: 10px 0 30px;
+    font-size: 2.5em;
+    line-height: 1em;
+  }
+  h2 {
+    display: block;
+    float: right;
+    padding-right: 40px;
+    padding-top: 10px;
+    font-size: 2em;
+
+  }
+  h3 {
+    text-align: left;
+    padding-left: 40px;
+  }
+  h4 {
+    text-align: left;
+    padding-left: 40px;
+  }
+  p {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  ul {
+    float: right;
+    li {
+      display: inline-block;
+      float: left;
+      margin-left: 10px;
     }
   }
 }

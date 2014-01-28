@@ -1,28 +1,14 @@
-<p>
-  <strong>Name:</strong>
-  <%= @item.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
-
-<p>
-  <strong>Vendor:</strong>
-  <%= @item.vendor %>
-</p>
-
-<p>
-  <strong>Starting Price:</strong>
-  <%= number_to_currency(@item.starting_price) %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @item.category.name %>
-</p>
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Delete', @item, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', root_path %>
+<article class="item-details">
+  <div class="image"></div>
+  <div class="details">
+    <h1><%= @item.name %></h1>
+    <h2><%= number_to_currency(@item.starting_price) %></h2>
+    <h3><span>Seller:</span> <%= @item.vendor %></h3>
+    <h4><span>Category:</span> <%= @item.category.name %></h4>
+    <p><%= @item.description %></p>
+  </div>
+  <ul class="details-nav">
+    <li><%= link_to 'Edit', edit_item_path(@item) %></li>
+    <li><%= link_to 'Delete', @item, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  </ul>
+</article>
