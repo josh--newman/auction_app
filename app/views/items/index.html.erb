@@ -2,7 +2,7 @@
 <h2>Items for sale</h2>
 <%= render 'shared/search' %>
 
-<%= will_paginate %>
+<%= will_paginate @items %>
 
 <% @items.each do |item| %>
 <article class="item-preview">
@@ -12,11 +12,9 @@
     <h3><%= item.category.name %></h3>
   </div>
 </article>
-
-<hr>
 <% end %>
 
-<%= will_paginate %>
+<%= will_paginate @items %>
 
 <br>
 
