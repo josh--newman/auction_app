@@ -211,6 +211,7 @@ select#category {
   background-color: $navyBlue;
   color: white;
   border: none;
+  font-size: 0.8em;
 }
 
 /* ABOUT STYLES */
@@ -321,6 +322,37 @@ div.pagination {
   background-color: $lightestGrey;
   margin: 20px 0;
   width: 100%;
+}
+
+/* FORM ERROR STYLES */
+
+form {
+  text-align: center;
+  input, textarea {
+    width: 300px;
+    font-size: 0.8em;
+  }
+  input {
+    height: 30px;
+  }
+  textarea {
+    height: 200px;
+  }
+  input[name="commit"] {
+    @include submit-button($appleGreen);
+  }
+  .field {
+    margin-bottom: 20px;
+  }
+}
+
+.alert-error {
+  color: red;
+  font-size: 0.9em;
+  margin-bottom: 20px;
+  li {
+    margin: 0;
+  }
 }
 
 /* FOOTER STYLES */
