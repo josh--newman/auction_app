@@ -1,8 +1,14 @@
-*Auction App
+#Auction App
+###Joshua Newman (s2892398)
 
-** Joshua Newman (s2892398)
+This application is an "Auction App" developed as part of the 2503ICT Web Programming course offered in the summer of 2014 at Griffith University.
 
-**Purpose
-The purpose of this application is to facilitate sales between buyers and sellers of goods.
+Any feedback/issues/bugs should be sent to s2892398@griffith.edu.au
 
-Developed for 2503ICT Summer 2014 at Griffith University
+If you want to check out the app:
+
+    $ git clone git@bitbucket.org:josh.newman/auction_app.git
+    $ cd auction_app
+    $ bundle install
+    $ rake db:migrate; rake db:populate
+    $ rails s
