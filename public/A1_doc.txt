@@ -1,0 +1,50 @@
+Auction App - Assignment 1 Documentation
+========================================
+
+Author: Joshua Newman (s2892398)
+Created for: Summer 2014 2503ICT Griffith University
+Date: 28th January 2014
+
+# Getting set up
+    
+    $ git clone git@bitbucket.org:josh.newman/auction_app.git
+    $ cd auction_app
+    $ bundle install
+    $ rake db:migrate
+    $ rake db:populate
+    $ rails s
+
+    Now navigate to http://localhost:3000/ in your favourite browser
+
+# How to use the app
+
+    Navigation links:
+      * Items - This will navigate to the list of items for sale
+      * About - A brief description of the website
+      * Help  - Some frequently asked questions about the application
+      * Contact - Details on how to contact the developers
+      * Admin - A link to the list of categories, allows creation and deletion of categories (at this time anyone can access this section)
+
+# Required features
+
+    All required features were implemented as per the Assignment 1 specification document (http://www.ict.griffith.edu.au/teaching/2503ICT/Assessment/assign1/)
+
+# Additional features
+
+    Pagination of item#index was implemented. This additional feature was not required in the Assignment 1 specification, however it was added because of it's positive impact on the usability of the application
+
+# Usability testing
+
+    Throughout the development of the application, each new feature implemented was tested throughly on several modern browsers including Firefox, Safari and Chrome.
+
+    My fiance also participated in a usablity testing session where she was given certain tasks to complete in the application.
+
+    Positive feedback:
+      [+] Easy to understand user interface
+      [+] Able to quickly add new items
+
+    Negative feedback:
+      [-] The about page was confusing, the two icons were expected to be links to the information they talk about (this was implemented due to feedback)
+      [-] Help page was a little hard to read
+
+
