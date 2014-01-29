@@ -8,7 +8,9 @@
     <p><%= @item.description %></p>
   </div>
   <ul class="details-nav">
-    <li><%= link_to 'Edit', edit_item_path(@item) %></li>
-    <li><%= link_to 'Delete', @item, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <% if signed_in? && @item.user_id == current_user.id %>
+      <li><%= link_to 'Edit', edit_item_path(@item) %></li>
+      <li><%= link_to 'Delete', @item, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <% end %>
   </ul>
 </article>
