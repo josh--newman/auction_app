@@ -1,7 +1,9 @@
 <div class="fixed-header">
   <h1>Welcome to <%= print_jbay %></h1>
   <%= render 'shared/search' %>
-  <p class="sell">Got something to sell? <%= link_to 'List a new item', new_item_path %></p>
+  <% if signed_in? %>
+    <p class="sell">Got something to sell? <%= link_to 'List a new item', new_item_path %></p>
+  <% end %>
 </div>
 
 <div class="item-index"></div>

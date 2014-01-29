@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save   #success
-      redirect_to root_url
+      redirect_to @item
     else            # failure
       render action: 'new'
     end
@@ -57,7 +57,7 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:name, :description, 
+      params.require(:item).permit(:name, :description, :user_id,
                                    :starting_price, :category_id)
     end
 
