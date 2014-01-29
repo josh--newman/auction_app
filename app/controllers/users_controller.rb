@@ -24,6 +24,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    sign_out
+    @user.destroy
+    redirect_to users_path
+  end
+
   private
 
     def user_params
