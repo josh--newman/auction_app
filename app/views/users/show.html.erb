@@ -4,7 +4,8 @@
 </h1>
 
 <% if signed_in? && (@user.id == current_user.id || current_user.admin) %>
-  <p class="delete-buttons"><%= link_to "Delete Account", @user, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <p class="delete-account"><%= link_to "Delete Account", @user, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <p class="edit-account"><%= link_to "Edit Account", edit_user_path %></p>
 <% end %>
 
 <table id="item_table">

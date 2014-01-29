@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :destroy]
+  before_action :set_user, only: [:show, :destroy, :edit, :update]
   
   def index
     @users = User.all
@@ -21,6 +21,14 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       render 'new'
+    end
+  end
+
+  def update
+    if @user.update(user_params)
+      redirect_to @user # put flash here
+    else
+      render action: 'edit'
     end
   end
 
