@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :destroy]
   
   def index
     @users = User.all
@@ -9,7 +10,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @items = Item.where("user_id = ?", @user.id)
   end
 
@@ -31,6 +31,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+    def set_user
+      @user = User.find(params[:id])
+    end
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
