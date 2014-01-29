@@ -14,7 +14,13 @@
       <tr>
         <td><%= link_to user.name, user %></td>
         <td><%= user.email %></td>
-        <td><%#= user.admin %></td>
+        <td>
+          <% if user.admin %>
+            Yes
+          <% else %>
+            No
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

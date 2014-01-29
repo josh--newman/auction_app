@@ -28,5 +28,30 @@ namespace :db do
                    starting_price: starting_price)
     end
 
+    User.create!(name: "Matthew Shipman", 
+                 email: "mshipman@hotmail.com.au", 
+                 password: "password",
+                 password_confirmation: "password")
+
+    User.create!(name: "Rob Chatfield", 
+                 email: "rjchatfield@gmail.com", 
+                 password: "password", 
+                 password_confirmation: "password")
+
+    User.create!(name: "Jiji", 
+                 email: "jiji@cat.com", 
+                 password: "password",
+                 password_confirmation: "password")
+
+    User.create!(name: "Test Tester", 
+                 email: "test@test.com", 
+                 password: "password", 
+                 password_confirmation: "password")
+
+    User.create!(name: "Josh Newman", 
+                 email: "josh.newman4390@gmail.com", 
+                 password: "password", 
+                 password_confirmation: "password", admin: 1)
+    
   end
 end
