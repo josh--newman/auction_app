@@ -14,20 +14,6 @@ namespace :db do
     Category.create!(name: "Wigs", description: "Are you bald? Get one of these")
     Category.create!(name: "Cars", description: "Metal and tires with an engine")
 
-    # Item definitions
-    99.times do |n|
-      name = Faker::Commerce.product_name
-      vendor = Faker::Name.name
-      category_id = rand(1..10)
-      description = Faker::Lorem.paragraph
-      starting_price = rand(10..999) - 0.05
-      Item.create!(name:           name,
-                   vendor:         vendor,
-                   category_id:    category_id,
-                   description:    description,
-                   starting_price: starting_price)
-    end
-
     User.create!(name: "Matthew Shipman", 
                  email: "mshipman@hotmail.com.au", 
                  password: "password",
@@ -52,6 +38,22 @@ namespace :db do
                  email: "josh.newman4390@gmail.com", 
                  password: "password", 
                  password_confirmation: "password", admin: 1)
+    
+
+    # Item definitions
+    99.times do |n|
+      name = Faker::Commerce.product_name
+      user_id = rand(1..5)
+      category_id = rand(1..10)
+      description = Faker::Lorem.paragraph
+      starting_price = rand(10..999) - 0.05
+      Item.create!(name:           name,
+                   user_id:        user_id,
+                   category_id:    category_id,
+                   description:    description,
+                   starting_price: starting_price)
+    end
+
     
   end
 end

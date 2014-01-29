@@ -2,10 +2,11 @@ class Item < ActiveRecord::Base
   
   default_scope -> { order('created_at DESC') }
   belongs_to :category
+  belongs_to :user
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :category_id, presence: true
-  validates :vendor, presence: true
+  validates :user_id,     presence: true
 
   def self.search(name, category_id)
     if !category_id.empty?
