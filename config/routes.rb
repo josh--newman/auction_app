@@ -1,4 +1,5 @@
 AuctionApp::Application.routes.draw do
+  get "users/new"
   resources :categories
   resources :items
 
