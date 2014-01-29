@@ -146,10 +146,13 @@ header img {
   position: relative;
 }
 
+div.pusher {
+  height: 144px;
+}
+
 /* FIXED IMAGE HEADER STYLES */
 
 div.fixed-header {
-  margin-top: 144px;
   background: url('home_banner.jpg');
   width: 960px;
   height: 400px;
@@ -243,9 +246,6 @@ select#category {
 }
 
 /* ABOUT STYLES */
-div.about {
-  padding-top: 100px;
-}
 
 .about-article {
   vertical-align: top;
@@ -266,7 +266,6 @@ div.about {
 /* ITEMS PREVIEW AND DETAILS STYLES */
 
 div.item-articles {
-  margin-top: 6em;
   background-color: white;
   position: relative;
 }
@@ -361,7 +360,7 @@ article.item-details {
 div.pagination {
   text-align: center;
   background-color: $lightestGrey;
-  margin: 20px 0;
+  margin: 0 0 20px 0;
   width: 100%;
 }
 
