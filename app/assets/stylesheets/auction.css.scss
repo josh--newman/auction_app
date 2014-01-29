@@ -124,6 +124,10 @@ nav#main-nav {
 }
 
 header {
+  height: 6em;
+  position: fixed;
+  width: 100%;
+  z-index: 400;
   background-color: $charcoalGrey;
   font-size: 1.5em;
   a {
@@ -142,10 +146,32 @@ header img {
   position: relative;
 }
 
+/* FIXED IMAGE HEADER STYLES */
+
+div.fixed-header {
+  margin-top: 144px;
+  background: url('home_banner.jpg');
+  width: 960px;
+  height: 400px;
+  position: fixed;
+  z-index: 0;
+  h1 {
+    color: $lightestGrey;
+  }
+  a {
+    color: white;
+  }
+}
+
+div.item-index {
+  height: 400px;
+}
+
 /* BODY STYLES */
 
 div.main-body {
   width: 100%;
+  min-height: 544px;
   background: $lightestGrey;
   a {
     color: $navyBlue;
@@ -153,18 +179,18 @@ div.main-body {
 }
 
 div.container {
+  
   width: 960px;
   margin: 0 auto;
   background: white;
   font-size: 1.2em;
-  padding: 20px;
-
   h1 {
     font-size: 3em;
     line-height: 3em;
     display: block;
   }
 }
+
 
 table {
   padding: 5px;
@@ -182,7 +208,9 @@ table {
 
 p.sell {
   text-align: center;
-  margin: 50px 0;
+  margin: 60px 0 0 0;
+  color: black;
+  
 }
 
 strong {
@@ -215,6 +243,10 @@ select#category {
 }
 
 /* ABOUT STYLES */
+div.about {
+  padding-top: 100px;
+}
+
 .about-article {
   vertical-align: top;
   display: inline-block;
@@ -233,7 +265,16 @@ select#category {
 
 /* ITEMS PREVIEW AND DETAILS STYLES */
 
+div.item-articles {
+  margin-top: 6em;
+  background-color: white;
+  position: relative;
+}
+
 article.item-preview {
+  background-color: white;
+  position: relative;
+  z-index: 1;
   border-bottom: 1px solid black;
   clear: both;
   width: 850px;
@@ -268,7 +309,7 @@ article.item-preview {
 article.item-details {
   width: 600px; 
   margin: 0 auto;
-  padding: 30px;
+  padding: 200px 30px 30px 30px;
   div.image {
     width: 256px;
     height: 256px;

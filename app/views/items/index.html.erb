@@ -1,16 +1,23 @@
-<h1>Welcome to <%= print_jbay %></h1>
-<%= render 'shared/search' %>
-<p class="sell">Got something to sell? <%= link_to 'List a new item', new_item_path %></p>
-<%= will_paginate @items %>
+<div class="fixed-header">
+  <h1>Welcome to <%= print_jbay %></h1>
+  <%= render 'shared/search' %>
+  <p class="sell">Got something to sell? <%= link_to 'List a new item', new_item_path %></p>
+</div>
 
-<% @items.each do |item| %>
-<article class="item-preview">
-  <div class="item-thumb"></div>
-  <div class="details">
-    <h2><%= link_to item.name, item %></h2>
-    <h3><%= item.category.name %></h3>
-  </div>
-</article>
-<% end %>
+<div class="item-index"></div>
+  
+  <div class="item-articles">
+  <%= will_paginate @items %>
 
-<%= will_paginate @items %>
+  <% @items.each do |item| %>
+  <article class="item-preview">
+    <div class="item-thumb"></div>
+    <div class="details">
+      <h2><%= link_to item.name, item %></h2>
+      <h3><%= item.category.name %></h3>
+    </div>
+  </article>
+  <% end %>
+
+  <%= will_paginate @items %>
+  
