@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
-  before_action :set_item,       only: [:show, :edit, :update, :destroy]
-  before_action :set_categories, only: [:edit, :new, :create, :index]
+  before_action :set_item,                      only: [:show, :edit, :update, :destroy]
+  before_action :set_categories,                only: [:edit, :new, :create, :index]
+  before_action :auth_new_item,                 only: [:new, :create]
+  before_action :auth_edit_update_destroy_item, only: [:edit, :update, :destroy]
 
   def index
     if (params[:search] && params[:category])
@@ -25,7 +27,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save   #success
-      redirect_to @item
+      redirect_to @item # flash here
     else            # failure
       render action: 'new'
     end
@@ -45,6 +47,17 @@ class ItemsController < ApplicationController
   end
 
   private
+
+    def auth_new_item
+      redirect_to signin_path unless signed_in? 
+      # flash here
+    end
+
+    def auth_edit_update_destroy_item
+      redirect_to signin_path unless signed_in? && 
+                                    (@item.user_id == current_user.id || current_user.admin)
+      # flash here
+    end
 
     def set_item
       @item = Item.find(params[:id])

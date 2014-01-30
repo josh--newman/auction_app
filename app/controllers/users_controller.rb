@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :destroy, :edit, :update]
-  
+  before_action :check_user_session, only: [:new]
+  before_action :check_show_user, only: [:index, :show]
+  before_action :check_edit_user, only: [:edit, :update, :destroy]
+
   def index
     @users = User.all
   end
@@ -39,6 +42,22 @@ class UsersController < ApplicationController
   end
 
   private
+
+    def check_show_user
+      redirect_to signin_path unless signed_in?
+      # flash here
+    end
+
+    def check_edit_user
+      redirect_to signin_path unless signed_in? && (@user.id == current_user.id ||
+                                     current_user.admin)
+      # flash here
+    end
+
+    def check_user_session
+      redirect_to current_user if signed_in? && !current_user.admin
+      # flash here
+    end
 
     def set_user
       @user = User.find(params[:id])

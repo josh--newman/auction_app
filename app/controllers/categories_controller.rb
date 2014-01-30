@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :check_user_admin
 
   def index
     @categories = Category.all
@@ -39,6 +40,11 @@ class CategoriesController < ApplicationController
   end
 
   private
+
+    def check_user_admin
+      redirect_to signin_path unless signed_in? && current_user.admin
+      # flash here
+    end
 
     def set_category
       @category = Category.find(params[:id])
