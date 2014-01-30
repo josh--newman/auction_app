@@ -361,7 +361,7 @@ article.item-preview {
 article.item-details {
   width: 600px; 
   margin: 0 auto;
-  padding: 200px 30px 30px 30px;
+  padding: 80px 30px 30px 30px;
   div.image {
     width: 256px;
     height: 256px;
@@ -412,9 +412,15 @@ article.item-details {
 
 div.pagination {
   text-align: center;
-  background-color: $lightestGrey;
-  margin: 0 0 20px 0;
-  width: 100%;
+  background-color: $charcoalGrey;
+  padding: 10px;
+  color: white;
+  a {
+    color: $appleGreen;
+  }
+  span, em, a {
+    margin: 0 5px 0 0;
+  }
 }
 
 /* FORM ERROR STYLES */
