@@ -130,13 +130,64 @@ header {
   z-index: 400;
   background-color: $charcoalGrey;
   font-size: 1.5em;
-  a {
-    &:hover {
-      text-decoration: none;
-    }
+  
+  img {
+    height: 50%;
+    width: 50%;
   }
-  li {
-    padding: 0 10px;
+
+  #main-nav {
+    vertical-align: baseline;
+    position: relative;
+    li {
+      position: relative;
+      ul {
+        min-width: 120px;
+        left: -9999px;
+        background: $smokeGrey;
+        line-height: 1em;
+        li {
+          width: 100%;
+        }
+      }
+      &:hover {
+        ul {
+          left: 0;
+          a {
+            text-decoration: none;
+          }
+          li {
+            a {
+              &:hover {
+                background: $uclaGold;
+              }
+            }
+          }
+        }
+        a {
+          /*background: $smokeGrey;*/
+        }
+      }
+    } 
+    a {
+      display: block;
+      padding: 5px;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    ul {
+      position: absolute;
+      list-style: none;
+      left: 330px;
+      li {
+        float: none;
+      }
+      a {
+        white-space: nowrap;
+      }
+    }
   }
 }
 
