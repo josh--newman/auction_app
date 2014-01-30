@@ -132,15 +132,16 @@ header {
   font-size: 1.5em;
   
   img {
-    height: 50%;
-    width: 50%;
+    height: 40px;
+    width: 40px;
+    float: right;
   }
 
   #main-nav {
-    vertical-align: baseline;
     position: relative;
     li {
       position: relative;
+      line-height: 1em;
       ul {
         min-width: 120px;
         left: -9999px;
@@ -157,6 +158,7 @@ header {
             text-decoration: none;
           }
           li {
+            font-size: 0.8em;
             a {
               &:hover {
                 background: $uclaGold;
@@ -182,7 +184,7 @@ header {
       list-style: none;
       left: 330px;
       li {
-        float: none;
+        /*float: none;*/
       }
       a {
         white-space: nowrap;
@@ -191,11 +193,11 @@ header {
   }
 }
 
-header img {
+/*header img {
   padding-left: 10px;
   padding-top: 20px;
   position: relative;
-}
+}*/
 
 div.pusher {
   height: 144px;
