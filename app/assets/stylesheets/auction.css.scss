@@ -124,7 +124,7 @@ nav#main-nav {
 }
 
 header {
-  height: 6em;
+  height: 150px;
   position: fixed;
   width: 100%;
   z-index: 400;
@@ -143,7 +143,8 @@ header {
       position: relative;
       line-height: 1em;
       ul {
-        min-width: 120px;
+        float: left;
+        width: 150px;
         left: -9999px;
         background: $smokeGrey;
         line-height: 1em;
@@ -161,13 +162,10 @@ header {
             font-size: 0.8em;
             a {
               &:hover {
-                background: $uclaGold;
+                background: $bombay;
               }
             }
           }
-        }
-        a {
-          /*background: $smokeGrey;*/
         }
       }
     } 
@@ -180,11 +178,12 @@ header {
       }
     }
     ul {
-      position: absolute;
+      margin-top: 1em;
+      float: right;
+      position: relative;
       list-style: none;
-      left: 330px;
       li {
-        /*float: none;*/
+        float: none;
       }
       a {
         white-space: nowrap;
