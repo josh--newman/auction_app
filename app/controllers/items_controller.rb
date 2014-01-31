@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
   def show
     @bid = Bid.new
     @bids = Bid.where("item_id = ?", @item.id)
+    @bids = @bids.paginate(page: params[:page], per_page: 10)
   end
 
   def edit
