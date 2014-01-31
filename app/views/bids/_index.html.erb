@@ -1,4 +1,4 @@
-<% if !@bids.count%>
+<% if @bids.count > 0 %>
   <%= will_paginate @bids %>
 
   <table id="bid-table">
