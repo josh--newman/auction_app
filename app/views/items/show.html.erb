@@ -2,11 +2,17 @@
   <div class="image"></div>
   <div class="details">
     <h1><%= @item.name %></h1>
-    <h2><%= number_to_currency(@item.starting_price) %></h2>
+    <h2><%= number_to_currency(find_highest_bid_for(@item)) %></h2>
     <h3><span>Seller:</span> <%= link_to @item.user.name, @item.user %></h3>
     <h4><span>Category:</span> <%= @item.category.name %></h4>
     <p><%= @item.description %></p>
   </div>
+  
+  <%= render 'bids/index' %>
+  <% if signed_in? && current_user.id != @item.user_id %>
+    <%= render 'bids/form' %>
+  <% end %>
+
   <ul class="details-nav">
     <% if signed_in? && @item.user_id == current_user.id %>
       <li><%= link_to 'Edit', edit_item_path(@item) %></li>

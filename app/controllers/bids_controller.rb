@@ -1,25 +1,28 @@
 class BidsController < ApplicationController
-  before_action :set_bid,  only: [:show, :index]
-  before_action :set_item, only: [:show, :index]
+  before_action :set_bid,         only: [:show, :destroy]
+  before_action :set_item,        only: [:show, :destroy, :index]
+  before_action :auth_create_bid, only: [:create]
 
-  def new
-    @bid = Bid.new
-  end
 
   def create
     @bid = Bid.new(bid_params)
     if @bid.save
-      redirect_to @bid
-      # flash here
+      redirect_to @bid.item, notice: "Bid made!"
     else
-      render action: 'new'
+      render @bid.item, notice: "Cannot place a bid"
+    end
   end
 
-  def index
-    @bids = Bid.where('item_id = ?', @item.id)
+  def destroy
+    @bid.destroy
+    redirect_to @item
   end
 
   private
+
+    def auth_create_bid
+
+    end
 
     def set_bid
       @bid = Bid.find(params[:id])
@@ -30,7 +33,7 @@ class BidsController < ApplicationController
     end
 
     def bid_params
-      params.require(:item).permit(:amount, :user_id, :item_id)
+      params.require(:bid).permit(:amount, :user_id, :item_id)
     end
 
 end

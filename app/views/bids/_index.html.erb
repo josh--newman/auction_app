@@ -1,0 +1,18 @@
+<table id="bid-table">
+  <thead>
+    <tr>
+      <th>Bidder</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bids.each do |bid| %>
+    <tr>
+      <td><%= bid.user.name %></td>
+      <td><%= number_to_currency(bid.amount) %></td>
+      <td><%= time_ago_in_words(bid.created_at, include_seconds: true) + " ago" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
