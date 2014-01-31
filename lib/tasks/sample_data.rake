@@ -42,16 +42,18 @@ namespace :db do
 
     # Item definitions
     99.times do |n|
-      name = Faker::Commerce.product_name
-      user_id = rand(1..5)
-      category_id = rand(1..10)
-      description = Faker::Lorem.paragraph
+      name           = Faker::Commerce.product_name
+      user_id        = rand(1..5)
+      category_id    = rand(1..10)
+      description    = Faker::Lorem.paragraph
       starting_price = rand(10..999) - 0.05
+      finish_time    = rand(1..7).days.from_now
       Item.create!(name:           name,
                    user_id:        user_id,
                    category_id:    category_id,
                    description:    description,
-                   starting_price: starting_price)
+                   starting_price: starting_price,
+                   finish_time:    finish_time)
     end
 
     

@@ -16,7 +16,9 @@
     <div class="item-thumb"></div>
     <div class="details">
       <h2><%= link_to item.name, item %></h2>
+      <h3><%= number_to_currency(find_highest_bid_for(item)) %></h3>
       <h3><%= item.category.name %></h3>
+      <h3><%= time_to_natural_language(item.finish_time - Time.now) %> remaining</h3>
     </div>
   </article>
   <% end %>

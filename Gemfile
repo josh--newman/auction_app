@@ -28,6 +28,9 @@ gem 'faker'
 # For pagination
 gem 'will_paginate'
 
+# For time
+gem 'time_diff'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
