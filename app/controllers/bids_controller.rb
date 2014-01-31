@@ -1,7 +1,8 @@
 class BidsController < ApplicationController
-  before_action :set_bid,         only: [:show, :destroy, :create]
-  before_action :set_item,        only: [:show, :destroy, :index, :create]
-  before_action :auth_create_bid, only: [:create]
+  before_action :set_bid,          only: [:destroy, :create]
+  before_action :set_item,         only: [:destroy, :create]
+  before_action :auth_create_bid,  only: [:create]
+  before_action :auth_destroy_bid, only: [:destroy]
 
 
   def create
@@ -22,6 +23,10 @@ class BidsController < ApplicationController
 
     def auth_create_bid
       signed_in? && current_user.id != @item.user_id
+    end
+
+    def auth_destroy_bid
+      signed_in? && current_user.admin
     end
 
     def set_bid
