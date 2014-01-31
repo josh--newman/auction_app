@@ -1,5 +1,6 @@
 module ItemsHelper
 
+  # Method created by Shippy (https://gist.github.com/xxMShipmanxx/8732888)
   def time_to_natural_language(time_left)
    
     time_left = time_left.round.to_i
