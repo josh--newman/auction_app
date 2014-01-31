@@ -4,6 +4,8 @@ class Item < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
 
+  has_many :bids
+
   validates :name, presence: true, length: { maximum: 50 }
   validates :category_id, presence: true
   validates :user_id,     presence: true
