@@ -2,13 +2,13 @@
   <h1>Welcome to <%= print_jbay %></h1>
   <%= render 'shared/search' %>
   <% if signed_in? %>
-    <p class="sell">Got something to sell? <%= link_to 'List a new item', new_item_path %></p>
+  <p class="sell">Got something to sell? <%= link_to 'List a new item', new_item_path %></p>
   <% end %>
 </div>
 
 <div class="item-index"></div>
-  
-  <div class="item-articles">
+
+<div class="item-articles">
   <%= will_paginate @items %>
 
   <% @items.each do |item| %>
@@ -22,4 +22,4 @@
   <% end %>
 
   <%= will_paginate @items %>
-  
+</div>
