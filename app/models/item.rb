@@ -9,6 +9,7 @@ class Item < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 50 }
   validates :category_id, presence: true
   validates :user_id,     presence: true
+  validates :finish_time, presence: true
 
   def self.search(name, category_id)
     if !category_id.empty?
