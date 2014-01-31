@@ -47,7 +47,7 @@ namespace :db do
       category_id    = rand(1..10)
       description    = Faker::Lorem.paragraph
       starting_price = rand(10..999) - 0.05
-      finish_time    = rand(1..7).days.from_now
+      finish_time    = rand(1..30).days.from_now
       Item.create!(name:           name,
                    user_id:        user_id,
                    category_id:    category_id,
