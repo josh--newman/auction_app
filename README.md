@@ -15,12 +15,12 @@ If you want to check out the app:
     $ rails s
 
 ###TODO
-  + <del>Update item only before bids have been placed</del>
-  + <del>Add finish_time field to new item form</del>
-  + <del>If item is deleted, all bids for that item should also be deleted</del>
-  + <del>Add time remaining and item status to item details page</del>
+  + Update item only before bids have been placed [DONE]
+  + Add finish_time field to new item form [DONE]
+  + If item is deleted, all bids for that item should also be deleted [DONE]
+  + Add time remaining and item status to item details page [DONE]
   + Restrict bid amounts at a controller/model level
-    - Must be higher than a previous bid
+    - Must be higher than a previous bid [DONE]
     - Can't be placed if item expired
   + Add to Users profile
     - currently bidding
