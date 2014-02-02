@@ -56,6 +56,13 @@ namespace :db do
                    finish_time:    finish_time)
     end
 
+    Item.create!(name:           "Test for item ended",
+                 user_id:        1,
+                 category_id:    1,
+                 description:    "This item is a test",
+                 starting_price: 800,
+                 finish_time:    Time.now - 2.days)
+
     
   end
 end
