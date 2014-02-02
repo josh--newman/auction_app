@@ -74,7 +74,7 @@ class ItemsController < ApplicationController
 
     def auth_edit_update_no_bids
       if @item.bids.count > 0
-        redirect_to @item, notice: "This item has been bid on and cannot be updated"
+        redirect_to @item, notice: "This item has been bid on and cannot be edited"
       end
     end
 

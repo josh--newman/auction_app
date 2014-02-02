@@ -3,7 +3,6 @@ class Item < ActiveRecord::Base
   default_scope -> { order('created_at DESC') }
   belongs_to :category
   belongs_to :user
-
   has_many :bids, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 50 }

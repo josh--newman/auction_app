@@ -10,7 +10,7 @@ class BidsController < ApplicationController
     if @bid.save
       redirect_to @bid.item, notice: "Bid made!"
     else
-      render @bid.item, notice: "Cannot place a bid"
+      redirect_to @bid.item, notice: "Cannot place a bid"
     end
   end
 
