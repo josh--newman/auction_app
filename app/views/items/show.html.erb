@@ -15,7 +15,9 @@
 
   <ul class="details-nav">
     <% if signed_in? && @item.user_id == current_user.id %>
-      <li><%= link_to 'Edit', edit_item_path(@item) %></li>
+      <% if @item.bids.count == 0 %>
+        <li><%= link_to 'Edit', edit_item_path(@item) %></li>
+      <% end %>
       <li><%= link_to 'Delete', @item, method: :delete, data: { confirm: 'Are you sure?' } %></li>
     <% end %>
   </ul>

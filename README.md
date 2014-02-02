@@ -15,7 +15,7 @@ If you want to check out the app:
     $ rails s
 
 ###TODO
-  + Update item only before bids have been placed
+  + <del>Update item only before bids have been placed</del>
   + Add finish_time field to new item form
   + If item is deleted, all bids for that item should also be deleted
   + Add time remaining and item status to item details page

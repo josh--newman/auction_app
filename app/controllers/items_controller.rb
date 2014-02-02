@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :set_categories,                only: [:edit, :new, :create, :index]
   before_action :auth_new_item,                 only: [:new, :create]
   before_action :auth_edit_update_destroy_item, only: [:edit, :update, :destroy]
+  before_action :auth_edit_update_no_bids,      only: [:edit, :update]
 
   def index
     if (params[:search] && params[:category])
@@ -41,7 +42,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to @item
+      redirect_to @item, notice: "Item updated successully"
     else
       render action: 'edit'
     end
@@ -67,6 +68,12 @@ class ItemsController < ApplicationController
 
     def set_item
       @item = Item.find(params[:id])
+    end
+
+    def auth_edit_update_no_bids
+      if @item.bids.count
+        redirect_to @item, notice: "This item has been bid on and cannot be updated"
+      end
     end
 
     # this method collects the category names and id's
