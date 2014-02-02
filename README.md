@@ -17,7 +17,7 @@ If you want to check out the app:
 ###TODO
   + <del>Update item only before bids have been placed</del>
   + <del>Add finish_time field to new item form</del>
-  + If item is deleted, all bids for that item should also be deleted
+  + <del>If item is deleted, all bids for that item should also be deleted</del>
   + <del>Add time remaining and item status to item details page</del>
   + Restrict bid amounts at a controller/model level
     - Must be higher than a previous bid

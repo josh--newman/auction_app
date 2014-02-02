@@ -4,7 +4,7 @@ class Item < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
 
-  has_many :bids
+  has_many :bids, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :category_id, presence: true
