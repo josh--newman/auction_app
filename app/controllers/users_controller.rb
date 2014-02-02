@@ -55,7 +55,7 @@ class UsersController < ApplicationController
     end
 
     def check_user_session
-      redirect_to current_user if signed_in? && !current_user.admin
+      redirect_to current_user if signed_in?
       # flash here
     end
 
