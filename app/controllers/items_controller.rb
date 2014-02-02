@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
   before_action :set_item,                      only: [:show, :edit, :update, :destroy]
   before_action :set_categories,                only: [:edit, :new, :create, :index]
+  before_action :set_days,                      only: [:new, :create, :edit, :update]
+
   before_action :auth_new_item,                 only: [:new, :create]
   before_action :auth_edit_update_destroy_item, only: [:edit, :update, :destroy]
   before_action :auth_edit_update_no_bids,      only: [:edit, :update]
@@ -63,7 +65,7 @@ class ItemsController < ApplicationController
     def auth_edit_update_destroy_item
       redirect_to signin_path unless signed_in? && 
                                     (@item.user_id == current_user.id || current_user.admin)
-      # flash here
+      # Flash here
     end
 
     def set_item
@@ -71,7 +73,7 @@ class ItemsController < ApplicationController
     end
 
     def auth_edit_update_no_bids
-      if @item.bids.count
+      if @item.bids.count > 0
         redirect_to @item, notice: "This item has been bid on and cannot be updated"
       end
     end
@@ -82,9 +84,18 @@ class ItemsController < ApplicationController
       @categories = Category.all.collect { |c| [c.name, c.id] }
     end
 
+    def set_days
+      @days = []
+      (1..30).each do |i|
+        @days.push([(ActionController::Base.helpers.pluralize(i, 'day')),
+                    (Time.now + i.days)])
+      end
+      @days
+    end
+
     def item_params
       params.require(:item).permit(:name, :description, :user_id,
-                                   :starting_price, :category_id)
+                                   :starting_price, :category_id, :finish_time)
     end
 
 end

@@ -1,7 +1,9 @@
 module ItemsHelper
 
   def item_expired?(item)
-    item.finish_time - Time.now < 0
+    if item.finish_time
+      item.finish_time - Time.now < 0
+    end
   end
 
   # Function created by Shippy (https://gist.github.com/xxMShipmanxx/8732888)
