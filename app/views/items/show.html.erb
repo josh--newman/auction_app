@@ -5,6 +5,11 @@
     <h2><%= number_to_currency(find_highest_bid_for(@item)) %></h2>
     <h3><span>Seller:</span> <%= link_to @item.user.name, @item.user %></h3>
     <h4><span>Category:</span> <%= @item.category.name %></h4>
+    <% if @item.finish_time > Time.now %>
+      <h4><span>Finishes on:</span> <%= datetime_to_natural_format(@item.finish_time) %></h4>
+    <% else %>
+      <h5>Item ended</h5>
+    <% end %>
     <p><%= @item.description %></p>
   </div>
   
