@@ -13,3 +13,19 @@ If you want to check out the app:
     $ bundle install
     $ rake db:migrate; rake db:populate
     $ rails s
+
+###TODO
+  + Update item only before bids have been placed
+  + Add finish_time field to new item form
+  + If item is deleted, all bids for that item should also be deleted
+  + Add time remaining and item status to item details page
+  + Restrict bid amounts at a controller/model level
+    - Must be higher than a previous bid
+    - Can't be placed if item expired
+  + Add to Users profile
+    - currently bidding
+    - won items
+  + Image upload support
+  + General interface styling (2 column layout?)
+  + Documentation
+  + Javascript niceities

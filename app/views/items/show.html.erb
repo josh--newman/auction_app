@@ -9,7 +9,7 @@
   </div>
   
   <%= render 'bids/index' %>
-  <% if signed_in? && current_user.id != @item.user_id && !item_expired? %>
+  <% if signed_in? && current_user.id != @item.user_id && !item_expired?(@item) %>
     <%= render 'bids/form' %>
   <% end %>
 
