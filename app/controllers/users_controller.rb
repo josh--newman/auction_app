@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     # @bids.each do |bid|
     #   @closed_items.push(bid.item.where("finish_time < ?", Time.now))
     # end
-    @winning_bids = Bid.find_all_winning_bids
+    # @winning_bids = Bid.find_all_winning_bids
   end
 
   def create
