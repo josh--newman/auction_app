@@ -14,13 +14,18 @@ class UsersController < ApplicationController
 
   def show
     @items = Item.where("user_id = ?", @user.id)
+    @bids = Bid.where("user_id = ?", @user.id).group(:item_id)
+    # @closed_items = []
+    # @bids.each do |bid|
+    #   @closed_items.push(bid.item.where("finish_time < ?", Time.now))
+    # end
+    @winning_bids = Bid.find_all_winning_bids
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      sign_in @user
-      # flash[:success] = "Welcome to JBay!"
+      sign_in @user, notice: "Welcome to JBay!"
       redirect_to @user
     else
       render 'new'

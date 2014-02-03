@@ -84,6 +84,7 @@ class ItemsController < ApplicationController
       @categories = Category.all.collect { |c| [c.name, c.id] }
     end
 
+    # sets the days with datetimes for the new item form
     def set_days
       @days = []
       (1..30).each do |i|

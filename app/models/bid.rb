@@ -10,6 +10,16 @@ class Bid < ActiveRecord::Base
   validates :user_id, presence: true
   validates :item_id, presence: true
 
+  def self.find_all_winning_bids
+    @finished_bids = Bid.joins("JOIN items ON bids.item_id = items.id")
+                        .where("items.finish_time < ?", Time.now)
+    @winning_bids = []
+    @finished_bids.each do |bid|
+      temp = bid.order("amount DESC").first
+      @winning_bids.push(temp)
+    end
+  end
+
   private
 
     def check_bid
