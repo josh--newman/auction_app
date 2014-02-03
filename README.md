@@ -29,4 +29,4 @@ If you want to check out the app:
   + General interface styling (2 column layout?)
   + Documentation
   + Javascript niceities
-  + Add notices to redirects
+  + Add notices to redirects [DONE]
