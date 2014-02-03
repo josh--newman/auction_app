@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save   #success
-      redirect_to @item # flash here
+      redirect_to @item, notice: "Item created successfully"
     else            # failure
       render action: 'new'
     end
@@ -58,14 +58,12 @@ class ItemsController < ApplicationController
   private
 
     def auth_new_item
-      redirect_to signin_path unless signed_in? 
-      # flash here
+      redirect_to signin_path, notice: "Please sign in" unless signed_in?
     end
 
     def auth_edit_update_destroy_item
-      redirect_to signin_path unless signed_in? && 
+      redirect_to signin_path, notice: "Please sign in" unless signed_in? && 
                                     (@item.user_id == current_user.id || current_user.admin)
-      # Flash here
     end
 
     def set_item

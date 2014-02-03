@@ -42,8 +42,7 @@ class CategoriesController < ApplicationController
   private
 
     def check_user_admin
-      redirect_to signin_path unless signed_in? && current_user.admin
-      # flash here
+      redirect_to signin_path, notice: "Please sign in" unless signed_in? && current_user.admin
     end
 
     def set_category

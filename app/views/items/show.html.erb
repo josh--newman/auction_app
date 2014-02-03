@@ -1,3 +1,5 @@
+<%= content_tag(:p, notice, id: "notice") unless notice.nil? %>
+
 <article class="item-details">
   <div class="image"><%= image_tag @item.image_preview.url(:medium) %></div>
   <div class="details">

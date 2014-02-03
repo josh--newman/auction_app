@@ -1,0 +1,18 @@
+<h2>Items bid on</h2>
+<table class="bidding-items">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th># bids</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bids.each do |bid| %>
+      <tr>
+        <td><%= link_to bid.item.name, bid.item %></td>
+        <td><%= bid.item.bids.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

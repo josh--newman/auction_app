@@ -28,13 +28,13 @@ class UsersController < ApplicationController
       sign_in @user, notice: "Welcome to JBay!"
       redirect_to @user
     else
-      render 'new'
+      render 'new', notice: "Couldn't create your profile"
     end
   end
 
   def update
     if @user.update(user_params)
-      redirect_to @user # put flash here
+      redirect_to @user, notice: "Profile updated successfully"
     else
       render action: 'edit'
     end
@@ -43,25 +43,22 @@ class UsersController < ApplicationController
   def destroy
     sign_out
     @user.destroy
-    redirect_to users_path
+    redirect_to users_path, notice: "User deleted"
   end
 
   private
 
     def check_show_user
-      redirect_to signin_path unless signed_in?
-      # flash here
+      redirect_to signin_path, notice: "Please sign in" unless signed_in?
     end
 
     def check_edit_user
-      redirect_to signin_path unless signed_in? && (@user.id == current_user.id ||
+      redirect_to signin_path, notice: "Please sign in" unless signed_in? && (@user.id == current_user.id ||
                                      current_user.admin)
-      # flash here
     end
 
     def check_user_session
-      redirect_to current_user if signed_in?
-      # flash here
+      redirect_to current_user, notice: "You're already signed in" if signed_in?
     end
 
     def set_user

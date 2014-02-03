@@ -278,6 +278,14 @@ strong {
   font-weight: 600;
 }
 
+#notice {
+  text-align: center;
+  padding: 10px 0;
+  color: white;
+  font-size: 1.2em;
+  background-color: $appleGreen;
+}
+
 /* SEARCH BAR STYLES */
 
 .input-append {

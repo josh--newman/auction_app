@@ -9,12 +9,10 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
-      # do something
       sign_in user
       redirect_to user
     else
-      flash.now[:error] = "Invalid username/password combination"
-      render 'new'
+      render 'new', notice: "Invalid username/password combination"
     end
   end
 
@@ -26,12 +24,10 @@ class SessionsController < ApplicationController
   private
 
     def check_user_session
-      redirect_to current_user if signed_in?
-      # flash here
+      redirect_to current_user, notice: "You already have an account" if signed_in?
     end
 
     def check_destroy_session
-      redirect_to signin_path unless signed_in?
-      # flash here
+      redirect_to signin_path, notice: "Please sign in" unless signed_in?
     end
 end
