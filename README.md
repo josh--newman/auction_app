@@ -25,7 +25,7 @@ If you want to check out the app:
   + Add to Users profile
     - currently bidding [DONE]
     - won items
-  + Image upload support
+  + Image upload support [DONE]
   + General interface styling (2 column layout?)
   + Documentation
   + Javascript niceities
