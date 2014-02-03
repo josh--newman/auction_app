@@ -1,5 +1,5 @@
 <article class="item-details">
-  <div class="image"></div>
+  <div class="image"><%= image_tag @item.image_preview.url(:medium) %></div>
   <div class="details">
     <h1><%= @item.name %></h1>
     <h2><%= number_to_currency(find_highest_bid_for(@item)) %></h2>

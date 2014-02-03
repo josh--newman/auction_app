@@ -22,6 +22,10 @@
         <%= f.select(:finish_time, options_for_select(@days),
                      prompt: "How many days?") %>
     </div>
+    <div class="field">
+        Upload image<br>
+        <%= f.file_field :image_preview %>
+    </div>
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.submit "List item" %>
 <% end %>

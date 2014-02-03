@@ -13,7 +13,7 @@
 
   <% @items.each do |item| %>
   <article class="item-preview">
-    <div class="item-thumb"></div>
+    <div class="item-thumb"><%= image_tag item.image_preview.url(:thumb) %></div>
     <div class="details">
       <h2><%= link_to item.name, item %></h2>
       <h3><%= number_to_currency(find_highest_bid_for(item)) %></h3>

@@ -15,14 +15,21 @@ $uclaGold:     #F3B000;
 $appleGreen:   #88B700;
 
 @mixin submit-button($color) {
-    width: 100px;
-    height: 30px;
-    background-color: $color;
-    border: none;
-    color: white;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    margin: 10px 0;
+  width: 100px;
+  height: 30px;
+  background-color: $color;
+  border: none;
+  color: white;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+@mixin image-styles($size) {
+  width: size;
+  height: size;
+  -webkit-border-radius: size;
+  border-radius: size;
 }
 
 $defaultFont: 'Exo 2';
@@ -339,6 +346,12 @@ article.item-preview {
     -webkit-border-radius: 180px;
     border-radius: 180px;
     float: left;
+    img {
+      width: 180px;
+      height: 180px;
+      -webkit-border-radius: 180px;
+      border-radius: 180px;
+    }
   }
   .details {
     margin: 0 20px 20px 20px;
@@ -368,6 +381,12 @@ article.item-details {
     margin: 30px auto;
     -webkit-border-radius: 256px;
     border-radius: 256px;
+    img {
+      width: 256px;
+      height: 256px;
+      -webkit-border-radius: 256px;
+      border-radius: 256px;
+    }
   }
   span {
     color: $appleGreen;

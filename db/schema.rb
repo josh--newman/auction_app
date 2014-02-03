@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140131130347) do
+ActiveRecord::Schema.define(version: 20140203102540) do
 
   create_table "bids", force: true do |t|
     t.decimal  "amount"
@@ -32,14 +32,18 @@ ActiveRecord::Schema.define(version: 20140131130347) do
   end
 
   create_table "items", force: true do |t|
-    t.string   "name",                                                  null: false
+    t.string   "name",                                                              null: false
     t.text     "description"
-    t.decimal  "starting_price", precision: 8, scale: 2, default: 0.99, null: false
-    t.integer  "category_id",                                           null: false
+    t.decimal  "starting_price",             precision: 8, scale: 2, default: 0.99, null: false
+    t.integer  "category_id",                                                       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
     t.datetime "finish_time"
+    t.string   "image_preview_file_name"
+    t.string   "image_preview_content_type"
+    t.integer  "image_preview_file_size"
+    t.datetime "image_preview_updated_at"
   end
 
   add_index "items", ["user_id"], name: "index_items_on_user_id"

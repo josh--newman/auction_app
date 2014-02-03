@@ -31,6 +31,9 @@ gem 'will_paginate'
 # For time
 gem 'time_diff'
 
+# For image uploads
+gem "paperclip", "~> 3.0"
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
