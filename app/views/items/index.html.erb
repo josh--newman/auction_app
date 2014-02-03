@@ -9,6 +9,7 @@
 <div class="item-index"></div>
 
 <div class="item-articles">
+  <%= content_tag(:p, notice, id: "notice") unless notice.nil? %>
   <%= will_paginate @items %>
 
   <% @items.each do |item| %>
