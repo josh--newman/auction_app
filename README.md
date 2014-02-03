@@ -23,7 +23,7 @@ If you want to check out the app:
     - Must be higher than a previous bid [DONE]
     - Can't be placed if item expired
   + Add to Users profile
-    - currently bidding
+    - currently bidding [DONE]
     - won items
   + Image upload support
   + General interface styling (2 column layout?)

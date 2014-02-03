@@ -61,8 +61,11 @@ namespace :db do
                  category_id:    1,
                  description:    "This item is a test",
                  starting_price: 800,
-                 finish_time:    Time.now - 2.days)
+                 finish_time:    Time.now + 1.minute)
 
+    Bid.create!(amount:  900,
+                user_id: 2,
+                item_id: 100)
     
   end
 end

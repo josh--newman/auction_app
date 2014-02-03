@@ -7,6 +7,7 @@ module ItemsHelper
   end
 
   # Function created by Shippy (https://gist.github.com/xxMShipmanxx/8732888)
+  # Takes the time and calculates how long it has left before the time expires
   def time_to_natural_language(time_left)
     if time_left > 0
       time_left = time_left.round.to_i

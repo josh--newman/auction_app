@@ -16,7 +16,7 @@ class BidsController < ApplicationController
 
   def destroy
     @bid.destroy
-    redirect_to @item
+    redirect_to @item, notice: "Bid deleted"
   end
 
   private
