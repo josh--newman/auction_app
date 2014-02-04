@@ -1,5 +1,7 @@
-<h2>Won items</h2>
+<h2>You have won ></h2>
+<% unless @won_items.empty? %>
 <table class="won-items">
+  <%= will_paginate @won_items %>
   <thead>
     <tr>
       <th>Name</th>
@@ -16,3 +18,6 @@
     <% end %>
   </tbody>
 </table>
+<% else %>
+<p class="rule">No items</p>
+<% end %>

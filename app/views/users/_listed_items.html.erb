@@ -1,25 +1,18 @@
-<table class="user-items">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Category</th>
-    </tr>
-  </thead>
- 
-  <tbody>
+<div id="listed-items">
+  <h1><%= @user.name.split.first %> is selling ></h1>
+  <%= will_paginate @items %>
+  <% unless @items.empty? %>
     <% @items.each do |item| %>
-      <tr>
-        <td><%= link_to item.name, item, class: 'item_title' %></td>
-        <td><%= item.category.name %></td>
-        <% if signed_in? && @user.id == current_user.id %>
-          <td>
-            <% if item.bids.count == 0 %>
-              <%= link_to "Edit", edit_item_path %>
-            <% end %>
-          </td>
-          <td><%= link_to "Delete", item, method: "delete", data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
+      <article>
+        <%= link_to image_tag(item.image_preview.url(:thumb)), item %>
+        <h2><%= link_to item.name, item %></h2>
+        <p><%= number_to_currency(find_highest_bid_for(item)) %></p>
+        <p><%= item.category.name %></p>
+        <p><%= time_to_natural_language(item.finish_time - Time.now) %> remaining<p>
+      </article>
     <% end %>
-  </tbody>
-</table>
+  <% else %>
+    <p>No items</p>
+  <% end %>
+</div>
+

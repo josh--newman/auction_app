@@ -1,4 +1,7 @@
-<h2>Items bid on</h2>
+<h2>You have bid on ></h2>
+<% unless @bids.empty? %>
+<div class="table-box">
+<%= will_paginate @bids %>
 <table class="bidding-items">
   <thead>
     <tr>
@@ -16,3 +19,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
+<% else %>
+  <p class="rule">No items</p>
+<% end %>

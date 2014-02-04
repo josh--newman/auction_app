@@ -4,7 +4,7 @@ class Bid < ActiveRecord::Base
 
   before_save :check_bid
 
-  default_scope -> { order("created_at DESC") }
+  default_scope -> { order("bids.created_at DESC") }
 
   validates :amount,  presence: true, numericality: true
   validates :user_id, presence: true
