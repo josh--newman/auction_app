@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
   private
 
     def check_user_session
-      redirect_to current_user, notice: "You are already signed in" if signed_in?
+      redirect_to current_user, notice: "Welcome back #{current_user.name}" if signed_in?
     end
 
     def check_destroy_session
