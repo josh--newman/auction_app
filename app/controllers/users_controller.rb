@@ -49,12 +49,17 @@ class UsersController < ApplicationController
   private
 
     def check_show_user
-      redirect_to signin_path, notice: "Please sign in" unless signed_in?
+      unless signed_in?
+        store_location
+        redirect_to signin_path, notice: "Please sign in"
+      end
     end
 
     def check_edit_user
-      redirect_to signin_path, notice: "Please sign in" unless signed_in? && (@user.id == current_user.id ||
-                                     current_user.admin)
+      unless signed_in? && (@user.id == current_user.id || current_user.admin)
+        store_location
+        redirect_to signin_path, notice: "Please sign in"
+      end
     end
 
     def check_user_session

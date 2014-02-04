@@ -58,12 +58,17 @@ class ItemsController < ApplicationController
   private
 
     def auth_new_item
-      redirect_to signin_path, notice: "Please sign in" unless signed_in?
+      unless signed_in?
+        store_location
+        redirect_to signin_path, notice: "Please sign in"
+      end
     end
 
     def auth_edit_update_destroy_item
-      redirect_to signin_path, notice: "Please sign in" unless signed_in? && 
-                                    (@item.user_id == current_user.id || current_user.admin)
+      unless signed_in? && (@item.user_id == current_user.id || current_user.admin)
+        store_location
+        redirect_to signin_path, notice: "Please sign in"
+      end
     end
 
     def set_item
