@@ -9,9 +9,9 @@
         <% if current_user.admin? %>
           <li><%= link_to "Categories", categories_path %></li> |
         <% end %>
-      <li><%= link_to "Users", users_path %></li> |
+        <li><%= link_to "Users", users_path %></li> |
         <li><%= gravatar_for(current_user) %></li>
-        <li><%= link_to current_user.name, '#' %>
+        <li><%= link_to current_user.name, current_user %>
           <ul>
             <li><%= link_to "Profile", current_user %></li>
             <li><%= link_to "Sign out", signout_path, method: "delete" %></li>

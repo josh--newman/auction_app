@@ -8,9 +8,9 @@
   </thead>
 
   <tbody>
-    <% @winning_bids.each do |bid| %>
+    <% @won_items.each do |item| %>
       <tr>
-        <td><%= link_to bid.item.name, bid.item %></td>
+        <td><%= link_to item.name, item %></td>
         <td></td>
       </tr>
     <% end %>

@@ -10,14 +10,10 @@ class Bid < ActiveRecord::Base
   validates :user_id, presence: true
   validates :item_id, presence: true
 
-  def self.find_all_winning_bids
-    @finished_bids = Bid.joins("JOIN items ON bids.item_id = items.id")
-                        .where("items.finish_time < ?", Time.now)
-    @winning_bids = []
-    @finished_bids.each do |bid|
-      temp = bid.order("amount DESC").first
-      @winning_bids.push(temp)
-    end
+  def self.find_highest_bidder(item)
+    highest_bid = Bid.where("item_id = ?", item.id)
+                     .order("amount DESC").first
+    highest_bidder = highest_bid.user_id
   end
 
   private

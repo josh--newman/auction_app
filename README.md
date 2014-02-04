@@ -24,7 +24,7 @@ If you want to check out the app:
     - Can't be placed if item expired
   + Add to Users profile
     - currently bidding [DONE]
-    - won items
+    - won items [DONE]
   + Image upload support [DONE]
   + General interface styling (2 column layout?)
   + Documentation

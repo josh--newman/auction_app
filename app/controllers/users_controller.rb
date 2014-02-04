@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :destroy, :edit, :update]
+  before_action :set_user,           only: [:show, :destroy, :edit, :update]
   before_action :check_user_session, only: [:new]
-  before_action :check_show_user, only: [:index, :show]
-  before_action :check_edit_user, only: [:edit, :update, :destroy]
+  before_action :check_show_user,    only: [:index, :show]
+  before_action :check_edit_user,    only: [:edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -14,12 +14,10 @@ class UsersController < ApplicationController
 
   def show
     @items = Item.where("user_id = ?", @user.id)
-    @bids = Bid.where("user_id = ?", @user.id).group(:item_id)
-    # @closed_items = []
-    # @bids.each do |bid|
-    #   @closed_items.push(bid.item.where("finish_time < ?", Time.now))
-    # end
-    # @winning_bids = Bid.find_all_winning_bids
+    @bids = Bid.joins("JOIN items ON bids.item_id = items.id")
+               .where("bids.user_id = ? AND items.finish_time > ?", @user.id, Time.now)
+               .group(:item_id)
+    @won_items = Item.find_won_items(@user)
   end
 
   def create
