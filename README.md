@@ -30,3 +30,4 @@ If you want to check out the app:
   + Documentation
   + Javascript niceities
   + Add notices to redirects [DONE]
+  + Restructure the user profile page
