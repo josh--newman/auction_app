@@ -20,8 +20,8 @@ class UsersController < ApplicationController
     @won_items = Item.find_won_items(@user)
 
     # paginate stuff
-    @items = @items.paginate(page: params[:page], per_page: 5)
-    @bids = @bids.paginate(page: params[:page], per_page: 5)
+    @items = @items.paginate(page: params[:items_page], per_page: 5)
+    @bids = @bids.paginate(page: params[:bids_page], per_page: 5)
     # @won_items = @won_items.paginate(page: params[:page], per_page: 5)
   end
 

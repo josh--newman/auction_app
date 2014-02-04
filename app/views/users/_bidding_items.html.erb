@@ -1,7 +1,7 @@
 <h2>You have bid on ></h2>
 <% unless @bids.empty? %>
 <div class="table-box">
-<%= will_paginate @bids %>
+<%= will_paginate @bids, param_name: :bids_page %>
 <table class="bidding-items">
   <thead>
     <tr>
