@@ -1,7 +1,8 @@
 <h2>You have won ></h2>
 <% unless @won_items.empty? %>
+<div class="table-box">
 <table class="won-items">
-  <%= will_paginate @won_items %>
+  <%#= will_paginate @won_items %>
   <thead>
     <tr>
       <th>Name</th>
@@ -13,11 +14,12 @@
     <% @won_items.each do |item| %>
       <tr>
         <td><%= link_to item.name, item %></td>
-        <td></td>
+        <td><%= number_to_currency find_highest_bid_for(item) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 <% else %>
 <p class="rule">No items</p>
 <% end %>

@@ -1,5 +1,13 @@
 <div id="listed-items">
-  <h1><%= @user.name.split.first %> is selling ></h1>
+  <h1>
+    <% if current_user.id == @user.id %>
+      You are
+    <% else %>
+      <%= @user.name.split.first %> is
+    <% end %>
+     selling >
+  </h1>
+
   <%= will_paginate @items %>
   <% unless @items.empty? %>
     <% @items.each do |item| %>
