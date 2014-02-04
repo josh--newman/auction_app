@@ -1,31 +1,15 @@
 <%= content_tag(:p, notice, id: "notice") unless notice.nil? %>
 
-<article class="item-details">
-  <div class="image"><%= image_tag @item.image_preview.url(:medium) %></div>
-  <div class="details">
-    <h1><%= @item.name %></h1>
-    <h2><%= number_to_currency(find_highest_bid_for(@item)) %></h2>
-    <h3><span>Seller:</span> <%= link_to @item.user.name, @item.user %></h3>
-    <h4><span>Category:</span> <%= @item.category.name %></h4>
-    <% if @item.finish_time > Time.now %>
-      <h4><span>Finishes on:</span> <%= datetime_to_natural_format(@item.finish_time) %></h4>
-    <% else %>
-      <h5>Item ended</h5>
-    <% end %>
-    <p><%= @item.description %></p>
-  </div>
-  
-  <%= render 'bids/index' %>
+<%= render 'item_details' %>
+
+<aside id="item-sidebar">
+  <% if signed_in? && @item.user_id == current_user.id %>
+    <%= render 'user_options' %>
+  <% end %>
   <% if signed_in? && current_user.id != @item.user_id && !item_expired?(@item) %>
     <%= render 'bids/form' %>
   <% end %>
+  <%= render 'bids/index' %>
 
-  <ul class="details-nav">
-    <% if signed_in? && @item.user_id == current_user.id %>
-      <% if @item.bids.count == 0 %>
-        <li><%= link_to 'Edit', edit_item_path(@item) %></li>
-      <% end %>
-      <li><%= link_to 'Delete', @item, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-    <% end %>
-  </ul>
-</article>
+</aside>
+<p class="clear"></p>

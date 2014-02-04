@@ -1,4 +1,6 @@
+<h2>Recent bids ></h2>
 <% if @bids.count > 0 %>
+  <div class="table-box">
   <%= will_paginate @bids %>
 
   <table id="bid-table">
@@ -19,6 +21,7 @@
       <% end %>
     </tbody>
   </table>
+  </div>
 <% else %>
-  <p>No bids</p>
+  <p class="rule">No bids</p>
 <% end %>
