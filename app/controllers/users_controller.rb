@@ -25,10 +25,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      sign_in @user, notice: "Welcome to JBay!"
-      redirect_to @user
+      sign_in @user
+      redirect_to @user, notice: "Welcome to JBay!"
     else
-      render 'new', notice: "Couldn't create your profile"
+      render action: 'new', notice: "Couldn't create your profile"
     end
   end
 
