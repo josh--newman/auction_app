@@ -489,6 +489,7 @@ aside#profile-panel {
   
   h1 {
     line-height: 1em;
+    margin-bottom: 30px;
   }
   h2 {
     text-align: center;
@@ -546,6 +547,7 @@ p.rule {
 }
 
 div.table-box {
+  font-size: 0.9em;
   background: $lightestGrey;
   width: 94%;
   margin: 0 auto;
@@ -555,7 +557,7 @@ div.table-box {
   .pagination {
     -webkit-border-radius: 10px 10px 0 0;
     border-radius: 10px 10px 0 0;
-    font-size: 0.8em;
+    font-size: 1em;
     height: 1em;
     line-height: 1em;
   }
