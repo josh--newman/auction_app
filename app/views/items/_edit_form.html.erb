@@ -1,0 +1,26 @@
+<%= form_for(@item) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+        <%= f.label :name, class: "required" %><br>
+        <%= f.text_field :name %>
+    </div>
+    <div class="field">
+        <%= f.label :description %><br>
+        <%= f.text_area :description %>
+    </div>
+    <div class="field">
+        <%= f.label :starting_price, class: "required" %><br>
+        <%= f.number_field :starting_price, { min: 0.99, max: 999999.99, step: 0.01 } %>
+    </div>
+    <div class="field">
+        Category<br>
+        <%= f.select(:category_id, options_for_select(@categories, selected: @item.category_id),
+                     prompt: "Select a category") %>
+    </div>
+    <div class="field">
+        Upload image<br>
+        <%= f.file_field :image_preview %>
+    </div>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.submit "List item" %>
+<% end %>
