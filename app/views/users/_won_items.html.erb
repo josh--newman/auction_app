@@ -2,7 +2,11 @@
 <% unless @won_items.empty? %>
 <div class="table-box">
 <table class="won-items">
-  <%= will_paginate @won_items, param_name: :won_page %>
+  <%= will_paginate @won_items, param_name: :won_page,
+                                previous_label: "<<",
+                                next_label:     ">>", 
+                                inner_window:   1, 
+                                outer_window:   0 %>
   <thead>
     <tr>
       <th>Name</th>

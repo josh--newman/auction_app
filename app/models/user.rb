@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :items
-  has_many :bids
+  has_many :items, dependent: :destroy
+  has_many :bids,  dependent: :destroy
   
   before_save { self.email = email.downcase }
   before_create :create_remember_token

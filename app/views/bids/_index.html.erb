@@ -1,7 +1,10 @@
 <h2>Recent bids ></h2>
 <% if @bids.count > 0 %>
   <div class="table-box">
-  <%= will_paginate @bids %>
+  <%= will_paginate @bids, previous_label: "<<",
+                           next_label:     ">>", 
+                           inner_window:   1, 
+                           outer_window:   0 %>
 
   <table id="bid-table">
     <thead>
@@ -14,7 +17,7 @@
     <tbody>
       <% @bids.each do |bid| %>
       <tr>
-        <td><%= bid.user.name %></td>
+        <td><%= link_to bid.user.name, bid.user %></td>
         <td><%= number_to_currency(bid.amount) %></td>
         <td><%= time_ago_in_words(bid.created_at, include_seconds: true) + " ago" %></td>
       </tr>
