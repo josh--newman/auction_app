@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
       @items = Item.all
     end
     # then paginate the items
-    @items = @items.paginate(page: params[:page], per_page: 10)
+    @items = @items.paginate(page: params[:page], per_page: 5)
   end
 
   def show

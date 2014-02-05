@@ -26,8 +26,8 @@ If you want to check out the app:
     - currently bidding [DONE]
     - won items [DONE]
   + Image upload support [DONE]
-  + General interface styling (2 column layout?)
+  + General interface styling (2 column layout?) [DONE]
   + Documentation
   + Javascript niceities
   + Add notices to redirects [DONE]
-  + Restructure the user profile page
+  + Restructure the user profile page [DONE]
