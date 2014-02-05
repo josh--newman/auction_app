@@ -658,10 +658,17 @@ form {
 }
 
 footer {
-  text-align: center;
+  margin-left: 250px;
+  text-align: left;
   background-color: $charcoalGrey;
   color: $lightestGrey;
   clear: both;
+  p {
+    padding: 10px;
+  }
+  a {
+    color: $appleGreen;
+  }
 }
 
 .debug_dump {
