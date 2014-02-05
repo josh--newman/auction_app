@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     # paginate stuff
     @items = @items.paginate(page: params[:items_page], per_page: 5)
     @bids = @bids.paginate(page: params[:bids_page], per_page: 5)
-    # @won_items = @won_items.paginate(page: params[:page], per_page: 5)
+    @won_items = @won_items.paginate(page: params[:won_page], per_page: 5)
   end
 
   def create
